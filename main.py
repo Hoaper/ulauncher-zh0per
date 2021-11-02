@@ -20,7 +20,7 @@ class KeywordListener(EventListener):
         for i in range(5):
             items.append(ExtensionResultItem(icon='images/icon.png',
                                              name='Item %s' % i,
-                                             description='Item description %s' % i,
+                                             description=event.get_argument(),
                                              on_enter=HideWindowAction()))
 
         return RenderResultListAction(items)
@@ -33,7 +33,7 @@ class ItemEnterListener(EventListener):
        
         return RenderResultListAction([ ExtensionResultItem(icon='images/icon.png',
                                                                                                             name=data['new_name'],
-                                                                                                            on_enter=print(data)) ])
+                                                                                                            on_enter=HideWindowAction()) ])
 
 
 if __name__ == '__main__':
