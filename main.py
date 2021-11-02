@@ -17,8 +17,8 @@ class Ext_zh0per(Extension):
 class KeywordListener(EventListener):
 
     def on_event(self, event, extension):
-
-        items = list(ExtensionResultItem(
+        items = []
+        items.append(ExtensionResultItem(
             icon='images/icon.png',
             name='Execute',
             description=event.get_argument(),
