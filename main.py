@@ -22,7 +22,7 @@ class KeywordListener(EventListener):
             icon='images/icon.png',
             name='Execute',
             description=event.get_argument(),
-            on_enter=OpenAction('/bin/gnome-terminal --title TERMINAL') ))
+            on_enter=OpenAction('/bin/bash') ))
 
         return RenderResultListAction(items)
 
