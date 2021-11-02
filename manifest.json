@@ -1,6 +1,6 @@
 {
     "required_api_version": "^2.0.0",
-    "name": "Test Extension",
+    "name": "Just commands",
     "description": "let's start",
     "developer_name": "Maximus zh0per",
     "icon": "images/icon.png",
@@ -13,7 +13,7 @@
         "type": "keyword",
         "name": "Executer",
         "description": "Bash command execution via terminal",
-        "default_value": "exec"
+        "default_value": "_"
       }
     ]
   }
