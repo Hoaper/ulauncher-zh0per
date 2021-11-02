@@ -6,6 +6,7 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.OpenAction import OpenAction
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
+import os
 
 class Ext_zh0per(Extension):
 
@@ -33,7 +34,9 @@ class ItemEnterListener(EventListener):
 
         data = event.get_data()
         
-        print(data)
+        os.system(f'{data["command"]}\n/bin/bash')
+        
+        
         return HideWindowAction()
 
 
