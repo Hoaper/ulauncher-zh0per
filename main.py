@@ -33,10 +33,9 @@ class ItemEnterListener(EventListener):
     def on_event(self, event, extension):
 
         data = event.get_data()
+        command = data['command']
         
-        with open('/home/zh0per/Desktop/out.txt', 'w') as file:
-            for key, val in data.items():
-                file.write(f"{key}={val}")
+        os.system(f"gnome-terminal -e 'bash -c \"{command}; exec bash\"'")
         
         return HideWindowAction()
 
