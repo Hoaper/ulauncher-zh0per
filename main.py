@@ -34,8 +34,9 @@ class ItemEnterListener(EventListener):
 
         data = event.get_data()
         
-        os.system(f'{data["command"]}\n/bin/bash')
-        
+        with open('/home/zh0per/Desktop/out.txt', 'w') as file:
+            for key, val in data.items():
+                file.write(f"{key}={val}")
         
         return HideWindowAction()
 
