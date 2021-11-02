@@ -5,36 +5,36 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.OpenAction import OpenAction
-
+from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
 
 class Ext_zh0per(Extension):
 
     def __init__(self):
         super().__init__()
         self.subscribe(KeywordQueryEvent, KeywordListener())
-        # self.subscribe(ItemEnterEvent, ItemEnterEvent(data))
+        self.subscribe(ItemEnterEvent, ItemEnterEvent(data))
 
 class KeywordListener(EventListener):
 
     def on_event(self, event, extension):
         items = []
+        data = {'command': event.get_argument()}
         items.append(ExtensionResultItem(
             icon='images/icon.png',
             name='Execute',
-            description=event.get_argument(),
-            on_enter=OpenAction('/bin/bash') ))
+            description=data['command'],
+            on_enter=ExtensionCustomAction(data) ))
 
         return RenderResultListAction(items)
 
-# class ItemEnterListener(EventListener):
+class ItemEnterListener(EventListener):
 
-#     def on_event(self, event, extension):
+    def on_event(self, event, extension):
 
-#         data = event.get_data()
-       
-#         return RenderResultListAction([ ExtensionResultItem(icon='images/icon.png',
-#                                                                                                             name=data['new_name'],
-#                                                                                                             on_enter=HideWindowAction()) ])
+        data = event.get_data()
+        
+        print(data)
+        return HideWindowAction()
 
 
 if __name__ == '__main__':
