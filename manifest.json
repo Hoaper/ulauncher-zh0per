@@ -11,9 +11,9 @@
       {
         "id": "demo_kw",
         "type": "keyword",
-        "name": "Test",
-        "description": "Keyword for tests",
-        "default_value": "test"
+        "name": "Executer",
+        "description": "Bash command execution via terminal",
+        "default_value": "exec"
       }
     ]
   }

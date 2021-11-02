@@ -4,6 +4,7 @@ from ulauncher.api.shared.event import KeywordQueryEvent, ItemEnterEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
+from ulauncher.api.shared.action.OpenAction import OpenAction
 
 
 class Ext_zh0per(Extension):
@@ -19,9 +20,9 @@ class KeywordListener(EventListener):
         items = []
         items.append(ExtensionResultItem(
             icon='images/icon.png',
-            name='Name',
+            name='Execute',
             description=event.get_argument(),
-            on_enter=HideWindowAction() ))
+            on_enter=OpenAction('gnome-terminal -e "bash -c \'bash\'"') ))
 
         return RenderResultListAction(items)
 
