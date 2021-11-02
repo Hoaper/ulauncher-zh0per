@@ -6,14 +6,14 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 
 
-class DemoExtension(Extension):
+class Ext_zh0per(Extension):
 
     def __init__(self):
         super().__init__()
-        self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
+        self.subscribe(KeywordQueryEvent, KeywordListener()())
+        self.subscribe(ItemEnterEvent, ItemEnterEvent(data))
 
-
-class KeywordQueryEventListener(EventListener):
+class KeywordListener(EventListener):
 
     def on_event(self, event, extension):
         items = []
@@ -25,5 +25,17 @@ class KeywordQueryEventListener(EventListener):
 
         return RenderResultListAction(items)
 
+class ItemEnterListener(EventListener):
+
+    def on_event(self, event, extension):
+
+        data = event.get_data()
+       
+        return RenderResultListAction([ ExtensionResultItem(icon='images/icon.png',
+                                                                                                            name=data['new_name'],
+                                                                                                            on_enter=print(data)) ])
+
+
 if __name__ == '__main__':
-    DemoExtension().run()
+    Ext_zh0per().run()
+
