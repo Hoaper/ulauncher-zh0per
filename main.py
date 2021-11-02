@@ -19,7 +19,7 @@ class KeywordListener(EventListener):
         items = []
         items.append(ExtensionResultItem(icon='images/icon.png',
                                         name='Name',
-                                        description=event.get_argument(),
+                                        description="event.get_argument()",
                                         on_enter=HideWindowAction()))
 
         return RenderResultListAction(items)
