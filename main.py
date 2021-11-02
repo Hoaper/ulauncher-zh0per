@@ -28,16 +28,16 @@ class KeywordListener(EventListener):
 
         return RenderResultListAction(items)
 
-class ItemEnterListener(EventListener):
+# class ItemEnterListener(EventListener):
 
-    def on_event(self, event, extension):
+#     def on_event(self, event, extension):
 
-        data = event.get_data()
+#         data = event.get_data()
         
-        os.system(f'{data["command"]}\n/bin/bash')
+#         os.system(f'{data["command"]}\n/bin/bash')
         
         
-        return HideWindowAction()
+#         return HideWindowAction()
 
 
 if __name__ == '__main__':
