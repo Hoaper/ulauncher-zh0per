@@ -17,10 +17,11 @@ class KeywordListener(EventListener):
 
     def on_event(self, event, extension):
         items = []
-        items.append(ExtensionResultItem(icon='images/icon.png',
-                                        name='Name',
-                                        description="event.get_argument()",
-                                        on_enter=HideWindowAction()))
+        items.append(ExtensionResultItem(
+            icon='images/icon.png',
+            name='Name',
+            description="event.get_argument()",
+            on_enter=HideWindowAction() ))
 
         return RenderResultListAction(items)
 
