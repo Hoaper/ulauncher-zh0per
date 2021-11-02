@@ -17,12 +17,12 @@ class Ext_zh0per(Extension):
 class KeywordListener(EventListener):
 
     def on_event(self, event, extension):
-        items = []
-        items.append(ExtensionResultItem(
+
+        items = list(ExtensionResultItem(
             icon='images/icon.png',
             name='Execute',
             description=event.get_argument(),
-            on_enter=OpenAction('gnome-terminal -e "bash -c \'bash\'"') ))
+            on_enter=OpenAction('gnome-terminal -e "bash"') ))
 
         return RenderResultListAction(items)
 
