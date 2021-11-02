@@ -10,7 +10,7 @@ class Ext_zh0per(Extension):
 
     def __init__(self):
         super().__init__()
-        self.subscribe(KeywordQueryEvent, KeywordListener()())
+        self.subscribe(KeywordQueryEvent, KeywordListener())
         # self.subscribe(ItemEnterEvent, ItemEnterEvent(data))
 
 class KeywordListener(EventListener):
@@ -20,7 +20,7 @@ class KeywordListener(EventListener):
         items.append(ExtensionResultItem(
             icon='images/icon.png',
             name='Name',
-            description="event.get_argument()",
+            description=event.get_argument(),
             on_enter=HideWindowAction() ))
 
         return RenderResultListAction(items)
