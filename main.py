@@ -1,5 +1,5 @@
 from ulauncher.api.client.Extension import Extension
-from ulauncher.api.client.EventListener import EventListener
+from ulauncher.api.client.EventListener import EventListener, ItemEventLi
 from ulauncher.api.shared.event import KeywordQueryEvent, ItemEnterEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
@@ -13,7 +13,7 @@ class Ext_zh0per(Extension):
     def __init__(self):
         super().__init__()
         self.subscribe(KeywordQueryEvent, KeywordListener())
-        self.subscribe(ItemEnterEvent, ItemEnterEvent(data))
+        self.subscribe(ItemEnterEvent, ItemEnterListener())
 
 class KeywordListener(EventListener):
 
@@ -28,16 +28,16 @@ class KeywordListener(EventListener):
 
         return RenderResultListAction(items)
 
-# class ItemEnterListener(EventListener):
+class ItemEnterListener(EventListener):
 
-#     def on_event(self, event, extension):
+    def on_event(self, event, extension):
 
-#         data = event.get_data()
+        data = event.get_data()
         
-#         os.system(f'{data["command"]}\n/bin/bash')
+        os.system(f'{data["command"]}\n/bin/bash')
         
         
-#         return HideWindowAction()
+        return HideWindowAction()
 
 
 if __name__ == '__main__':
