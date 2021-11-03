@@ -21,7 +21,7 @@ class KeywordListener(EventListener):
         items = []
         data = {'command': event.get_argument()}
         items.append(ExtensionResultItem(
-            icon='images/icon.png',
+            icon='images/run.png',
             name='Execute',
             description=data['command'],
             on_enter=ExtensionCustomAction(data) ))
