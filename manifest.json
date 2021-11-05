@@ -3,7 +3,7 @@
     "name": "Run commands",
     "description": "Run commands via terminal",
     "developer_name": "Maximus",
-    "icon": "images/icon.jpeg",
+    "icon": "images/icon.png",
     "options": {
       "query_debounce": 1
     },
