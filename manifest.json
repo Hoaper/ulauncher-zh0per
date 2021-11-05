@@ -1,19 +1,36 @@
 {
     "required_api_version": "^2.0.0",
-    "name": "Just commands",
-    "description": "let's start",
-    "developer_name": "Maximus zh0per",
+    "name": "Run commands",
+    "description": "Run commands via terminal",
+    "developer_name": "Maximus",
     "icon": "images/icon.png",
     "options": {
       "query_debounce": 1
     },
     "preferences": [
       {
-        "id": "demo_kw",
+        "id": "kw",
         "type": "keyword",
         "name": "Executer",
         "description": "Bash command execution via terminal",
         "default_value": "_"
+      },
+      {
+        "id": "terminal",
+        "type": "input",
+        "name": "Terminal",
+        "description": "Choose terminal to use",
+        "default_value": "/usr/bin/gnome-terminal"
+      },
+      {
+        "id": "env_type",
+        "type": "select",
+        "name": "Environment type",
+        "description": "Choose env that you want to use.",
+        "options": [
+          {"text": "Bash", "value": "bash"},
+          {"text": "ZSH", "value": "zsh"}
+        ]
       }
     ]
   }

@@ -33,9 +33,12 @@ class ItemEnterListener(EventListener):
     def on_event(self, event, extension):
 
         data = event.get_data()
+        
         command = data['command']
+        terminal = extension.preferences['terminal']
+        environment = extension.preferences['env_type']
 
-        os.system(f"gnome-terminal -e 'bash -c \"{command}; exec bash\"'")
+        os.system(f"{terminal}-e '{environment} -c \"{command}; exec {environment}\"'")
         
         return HideWindowAction()
 
