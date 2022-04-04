@@ -12,25 +12,15 @@
         "id": "kw",
         "type": "keyword",
         "name": "Executer",
-        "description": "Bash command execution via terminal",
+        "description": "Command execution via terminal",
         "default_value": "_"
       },
       {
         "id": "terminal",
         "type": "input",
-        "name": "Terminal",
-        "description": "Choose terminal to use",
-        "default_value": "/usr/bin/gnome-terminal"
-      },
-      {
-        "id": "env_type",
-        "type": "select",
-        "name": "Environment type",
-        "description": "Choose env that you want to use.",
-        "options": [
-          {"text": "Bash", "value": "bash"},
-          {"text": "ZSH", "value": "zsh"}
-        ]
+        "name": "Template",
+        "description": "Type command template needed to be processed (check readme for more info)",
+        "default_value": "/bin/konsole -e '/bin/zsh -c \"{command}; exec /bin/zsh\"'"
       }
     ]
   }

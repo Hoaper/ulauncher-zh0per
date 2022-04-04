@@ -36,9 +36,8 @@ class ItemEnterListener(EventListener):
         
         command = data['command']
         terminal = extension.preferences['terminal']
-        environment = extension.preferences['env_type']
 
-        os.system(f"{terminal} -e '{environment} -c \"{command}; exec {environment}\"'")
+        os.system(teminal.format(command=command))
         
         return HideWindowAction()
 

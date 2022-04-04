@@ -1,11 +1,20 @@
-# Ulauncher run command on any terminal
+# 🎈 Ulauncher | Run command on any terminal
 
-# Installation
-* Paste <code>https://github.com/Hoaper/ulauncher-zh0per</code> into the ulauncher extensions page
-* Configure preferences that you want to use <br /> ```Be careful! You should to choose bash or zsh environment```
-* Enjoy!
+# 🎈 Installation
+> 🧨 Paste <code>https://github.com/Hoaper/ulauncher-zh0per</code> into the ulauncher extensions page
+> 🧨 Configure template of command you want to process when typing
+>> Explaination:
+* Default value of template is:
+<code>/bin/konsole -e '/bin/zsh -c \"{command}; exec /bin/zsh\"'</code>
+* Here 1) <code>/bin/konsole</code> - a path to terminal
+       2) <code>zsh</code> - a terminal shell
+       3) <code>{command}</code> - your command that terminal will execute
+       4) <code>\"</code> - python shielding (if you want to use " then use \")
+       5) <code>exec zsh</code> - stay terminal open
+* You always available to use you own template as advanced user
+> 🧨 Enjoy!
 
-# Usage example
-<img src="https://github.com/Hoaper/ulauncher-zh0per/blob/main/images/Screenshot%20from%202021-11-03%2010-03-23.png" width="auto" height="auto" />
+# 🎈 Usage example
+<img src="" width="auto" height="auto" />
 
-<img src="https://github.com/Hoaper/ulauncher-zh0per/blob/main/images/example-1.png" width="auto" height="auto" />
+<img src="" width="auto" height="auto" />
