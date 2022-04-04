@@ -36,7 +36,8 @@ class ItemEnterListener(EventListener):
         
         command = data['command']
         terminal = extension.preferences['terminal']
-
+        with open("/home/zh0per/Desktop/out.txt", 'w') as f:
+            f.write(terminal.format(command=command))
         os.system(teminal.format(command=command))
         
         return HideWindowAction()
