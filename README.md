@@ -13,8 +13,3 @@ Explaination:
        5) <code>exec zsh</code> - stay terminal open <br>
 * You always available to use you own template as advanced user <br>
 > 🧨 Enjoy!
-
-# 🎈 Usage example
-<img src="" width="auto" height="auto" />
-
-<img src="" width="auto" height="auto" />
