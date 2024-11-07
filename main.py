@@ -37,7 +37,7 @@ class ItemEnterListener(EventListener):
         command = data['command']
         terminal = extension.preferences['terminal']
         try:
-            os.system(teminal.format(command=command))
+            os.system(terminal.format(command=command))
         except Exception as e:
             with open('/home/zh0per/Desktop/out.txt', 'w') as f:
                 f.write(e)
